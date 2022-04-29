@@ -1,0 +1,11 @@
+{
+  "name": "cool-shit-pkg",
+  "version": "1.0.0",
+  "description": "my cool stuff",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx jest ."
+  },
+  "author": "Marcus the Mighty",
+  "license": "MIT"
+}
