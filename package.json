@@ -2,11 +2,17 @@
   "name": "cool-shit-pkg",
   "version": "1.0.0",
   "description": "my cool stuff",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "npx jest ."
+    "test": "npx jest .",
+    "build": "tsc"
   },
   "author": "Marcus the Mighty",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^28.0.3",
+    "typescript": "^4.6.4"
+  }
 }
