@@ -7,5 +7,6 @@
     "test": "npx jest ."
   },
   "author": "Marcus the Mighty",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
