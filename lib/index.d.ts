@@ -1,2 +1,2 @@
-declare function log(message: string): string;
+export {};
 //# sourceMappingURL=index.d.ts.map
