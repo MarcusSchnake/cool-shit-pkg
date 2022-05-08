@@ -1,4 +1,4 @@
-const { log,getQuote } = require("../lib/index.js");
+const { log,getQuote,NSFWFilter } = require("../lib/index.js");
 
 
 const mockQuotes = [{
@@ -33,5 +33,19 @@ describe("deniro quotes test suite", () => {
     test("get single quote", () => {
         expect(JSON.stringify(getQuote(1))).toBe(JSON.stringify(mockQuotes[0]))
     });
-})
+});
+
+describe("NSFWFilter test", () => {
+  const Sassquachie = "Sassquachie";
+
+  test("test filtering dirty words for PG version", () => {
+      NSFWFilter('bitch')
+      NSFWFilter('twat')
+      expect(NSFWFilter('BITCH')).toBe(Sassquachie)
+      expect(NSFWFilter('tWAt')).toBe(Sassquachie)
+      expect(NSFWFilter('poopy')).toBe('poopy')
+
+
+  });
+});
 
