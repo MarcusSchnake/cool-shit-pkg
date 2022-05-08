@@ -8,7 +8,7 @@
     "test": "npx jest .",
     "build": "tsc"
   },
-  "author": "Marcus the Mighty",
+  "author": "Marcus 'The Mighty' Schnake & Aaron 'The Dragon' Krueger",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
