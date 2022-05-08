@@ -11,14 +11,38 @@ function getQuote(id: number) {
   return quote;
 }
 
-// function NSFWFilter(message:string) {
-//   const map1 = new Map();
+type myMapType = Record<string, string>;
 
-//   map1.set('fuck', Sassquachie),
-//   map1.set('bitch', Sassquachie ),
-//   map1.set('cum',Sassquachie)
+function NSFWFilter(message: string) {
+  const Sassquachie = "Sassquachie";
+  const NSFWMap: myMapType = {
+    fuck: Sassquachie,
+    fuckin: Sassquachie,
+    bitch: Sassquachie,
+    cum: Sassquachie,
+    damn: Sassquachie,
+    shit: Sassquachie,
+    cunt: Sassquachie,
+    pussy: Sassquachie,
+    motherfucker: Sassquachie,
+    dick: Sassquachie,
+    fucker: Sassquachie,
+    bitchass: Sassquachie,
+    ass: Sassquachie,
+    nigger: Sassquachie,
+    nigga: Sassquachie,
+    cracker: Sassquachie,
+    chink: Sassquachie,
+    spick: Sassquachie,
+    dyke: Sassquachie,
+    kike: Sassquachie,
+    cumdumpster: Sassquachie,
+    twat: Sassquachie
+  };
 
-//   console.log(map1.get('fuck'));
-// }
+  console.log(NSFWMap[message.toLowerCase().trim()]);
 
-module.exports = { log, getQuote };
+  return NSFWMap[message.toLowerCase().trim()] ?? message
+}
+
+module.exports = { log, getQuote, NSFWFilter };
