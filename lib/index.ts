@@ -11,6 +11,18 @@ function getQuote(id: number) {
   return quote;
 }
 
+function getParagraph() {
+  return `${getQuote(findDeniroRanID())}\n${getQuote(
+    findDeniroRanID()
+  )}\n${getQuote(findDeniroRanID())}\n${getQuote(
+    findDeniroRanID()
+  )}\n${getQuote(findDeniroRanID())}\n`;
+}
+
+function findDeniroRanID() {
+  return Math.floor(Math.random() * deniro_quotes.quotes.length - 1);
+}
+
 type myMapType = Record<string, string>;
 
 function NSFWFilter(message: string) {
@@ -37,12 +49,18 @@ function NSFWFilter(message: string) {
     dyke: Sassquachie,
     kike: Sassquachie,
     cumdumpster: Sassquachie,
-    twat: Sassquachie
+    twat: Sassquachie,
   };
 
   console.log(NSFWMap[message.toLowerCase().trim()]);
 
-  return NSFWMap[message.toLowerCase().trim()] ?? message
+  return NSFWMap[message.toLowerCase().trim()] ?? message;
 }
 
-module.exports = { log, getQuote, NSFWFilter };
+module.exports = {
+  log,
+  getQuote,
+  NSFWFilter,
+  getParagraph,
+  findDeniroRanID,
+};
