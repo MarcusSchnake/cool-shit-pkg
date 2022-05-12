@@ -1,21 +1,27 @@
-const { log,getQuote,NSFWFilter } = require("../lib/index.js");
+const {
+  log,
+  getQuote,
+  NSFWFilter,
+  findDeniroRanID,
+} = require("../lib/index.js");
 
-
-const mockQuotes = [{
-    "quote": "I have nipples, Greg. Could you milk me?",
-    "id": 1,
-    "movie": "Meet The Parents"
+const mockQuotes = [
+  {
+    quote: "I have nipples, Greg. Could you milk me?",
+    id: 1,
+    movie: "Meet The Parents",
   },
   {
-    "quote": "Don’t let yourself get attached to anything you are not willing to walk out on in 30 seconds flat if you feel the heat coming around the corner",
-    "id": 2,
-    "movie": "Heat"
+    quote:
+      "Don’t let yourself get attached to anything you are not willing to walk out on in 30 seconds flat if you feel the heat coming around the corner",
+    id: 2,
+    movie: "Heat",
   },
   {
-    "quote": "Hey, kid, I think I got a little problem here",
-    "id": 3,
-    "movie": "Backdraft"
-  }
+    quote: "Hey, kid, I think I got a little problem here",
+    id: 3,
+    movie: "Backdraft",
+  },
 ];
 
 describe("my first test suite", () => {
@@ -26,26 +32,35 @@ describe("my first test suite", () => {
   test("my second test", () => {
     expect(log("hello")).toBe("hello");
   });
-  
 });
 
 describe("deniro quotes test suite", () => {
-    test("get single quote", () => {
-        expect(JSON.stringify(getQuote(1))).toBe(JSON.stringify(mockQuotes[0]))
-    });
+  test("get single quote", () => {
+    expect(JSON.stringify(getQuote(1))).toBe(JSON.stringify(mockQuotes[0]));
+  });
 });
 
 describe("NSFWFilter test", () => {
   const Sassquachie = "Sassquachie";
 
   test("test filtering dirty words for PG version", () => {
-      NSFWFilter('bitch')
-      NSFWFilter('twat')
-      expect(NSFWFilter('BITCH')).toBe(Sassquachie)
-      expect(NSFWFilter('tWAt')).toBe(Sassquachie)
-      expect(NSFWFilter('poopy')).toBe('poopy')
-
-
+    expect(NSFWFilter("BITCH")).toBe(Sassquachie);
+    expect(NSFWFilter("tWAt")).toBe(Sassquachie);
+    expect(NSFWFilter("poopy")).toBe("poopy");
   });
 });
+
+describe("getting data", () =>{
+  // const deniro_quotes = (element)
+  test("random deniro id test",  () => {
+    let multiplier = findDeniroRanID()
+    var a = 0;
+    var b = 0;
+    while(a < multiplier) {
+      a++;
+      b += a;
+      expect(typeof findDeniroRanID()).toBe("number");
+    }
+  })
+})
 
