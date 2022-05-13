@@ -5,18 +5,17 @@ function log(message: string) {
   return message;
 }
 
-function getQuote(id: number) {
-  const quote = deniro_quotes.quotes.find((element) => element.id === 1);
-  console.log(quote?.quote);
+function getQuoteById(id: number) {
+  const quote = deniro_quotes.quotes.find((element) => element.id === id);
   return quote;
 }
 
 function getParagraph() {
-  return `${getQuote(findDeniroRanID())}\n${getQuote(
+  return `${getQuoteById(findDeniroRanID())}\n${getQuoteById(
     findDeniroRanID()
-  )}\n${getQuote(findDeniroRanID())}\n${getQuote(
+  )}\n${getQuoteById(findDeniroRanID())}\n${getQuoteById(
     findDeniroRanID()
-  )}\n${getQuote(findDeniroRanID())}\n`;
+  )}\n${getQuoteById(findDeniroRanID())}\n`;
 }
 
 function findDeniroRanID() {
@@ -52,14 +51,12 @@ function NSFWFilter(message: string) {
     twat: Sassquachie,
   };
 
-  console.log(NSFWMap[message.toLowerCase().trim()]);
-
   return NSFWMap[message.toLowerCase().trim()] ?? message;
 }
 
 module.exports = {
   log,
-  getQuote,
+  getQuoteById,
   NSFWFilter,
   getParagraph,
   findDeniroRanID,
