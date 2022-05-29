@@ -1,16 +1,16 @@
 import * as deniro_quotes from "./deniro_quotes.json";
 
-function log(message: string) {
+export function log(message: string) {
   console.log(message);
   return message;
 }
 
-function getQuoteById(id: number) {
+export function getQuoteById(id: number) {
   const quote = deniro_quotes.quotes.find((element) => element.id === id);
   return quote;
 }
 
-function getParagraph() {
+export function getParagraph() {
   return `${getQuoteById(findDeniroRanID())}\n${getQuoteById(
     findDeniroRanID()
   )}\n${getQuoteById(findDeniroRanID())}\n${getQuoteById(
@@ -18,13 +18,13 @@ function getParagraph() {
   )}\n${getQuoteById(findDeniroRanID())}\n`;
 }
 
-function findDeniroRanID() {
+export function findDeniroRanID() {
   return Math.floor(Math.random() * deniro_quotes.quotes.length - 1);
 }
 
 type myMapType = Record<string, string>;
 
-function NSFWFilter(message: string) {
+export function NSFWFilter(message: string) {
   const Sassquachie = "Sassquachie";
   const NSFWMap: myMapType = {
     fuck: Sassquachie,
@@ -54,10 +54,4 @@ function NSFWFilter(message: string) {
   return NSFWMap[message.toLowerCase().trim()] ?? message;
 }
 
-module.exports = {
-  log,
-  getQuoteById,
-  NSFWFilter,
-  getParagraph,
-  findDeniroRanID,
-};
+
