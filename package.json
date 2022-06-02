@@ -1,7 +1,7 @@
 {
   "name": "cool-shit-pkg",
   "version": "1.1.7",
-  "type":"module",
+  "type": "module",
   "description": "my cool stuff",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
@@ -11,9 +11,20 @@
   },
   "author": "Marcus 'The Mighty' Schnake & Aaron 'The Dragon' Krueger",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "jest": "^28.0.3",
     "typescript": "^4.6.4"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcusSchnake/cool-shit-pkg-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcusSchnake/cool-shit-pkg-website/issues"
+  },
+  "homepage": "https://github.com/MarcusSchnake/cool-shit-pkg-website#readme"
 }
