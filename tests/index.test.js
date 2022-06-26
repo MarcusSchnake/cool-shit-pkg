@@ -1,9 +1,4 @@
-const {
-  log,
-  getQuoteById,
-  NSFWFilter,
-  findDeniroRanID,
-} = require("../lib/index.js");
+import { log, getQuoteById, NSFWFilter, findDeniroRanID } from "../dist/lib/index.js";
 
 const mockQuotes = [
   {

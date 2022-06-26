@@ -1,4 +1,4 @@
-import * as deniro_quotes from "./deniro_quotes.json";
+import {deniro_quotes} from "./deniro_quotes.js";
 
 export function log(message: string) {
   console.log(message);
